@@ -269,8 +269,8 @@ def cni_scan():
     if not current_app.config["KEEP_SCANS"]:
         os.remove(filepath)
 
-    if min(image.shape[0], image.shape[1]) < 900:
-        raise InvalidUsageException("IMG_SIZE_TOO_SMALL", "Image must be at least 900x900 pixels")
+    if min(image.shape[0], image.shape[1]) < 500:
+        raise InvalidUsageException("IMG_SIZE_TOO_SMALL", "Image must be at least 500x500 pixels")
 
     excel_path = os.path.join(current_app.config["UPLOAD_FOLDER"], "exported_data.xls")
 
